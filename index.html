@@ -2,27 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@400;600;700;900&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--v:#673AB7;--g:#2E8B57;--y:#FAFF00;--f:#FF18E8;--bk:#0d0d0d;--paper:#f0e8d6}
-body{
-  font-family:'Lucida Sans','Lucida Grande',sans-serif;
-  background-color:var(--paper);
-  color:var(--bk);
-  overflow-x:hidden;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-}
-/* Paper crinkle lines */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:0.04;
-  background:repeating-linear-gradient(88deg,transparent,transparent 60px,rgba(0,0,0,0.8) 60px,rgba(0,0,0,0.8) 61px),
-             repeating-linear-gradient(2deg,transparent,transparent 90px,rgba(0,0,0,0.4) 90px,rgba(0,0,0,0.4) 91px);
-}
-
-/* ===== NAV ===== */
-nav{
-  background:var(--bk);padding:.8rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:200;
-  border-bottom:4px solid var(--f);
-}
+body{font-family:'Lucida Sans','Lucida Grande',sans-serif;background-color:var(--paper);color:var(--bk);overflow-x:hidden;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+nav{background:var(--bk);padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:4px solid var(--f)}
 .logo{font-family:'Anton',sans-serif;font-size:1.3rem;color:#fff;text-transform:uppercase;letter-spacing:2px}
 .logo em{color:var(--f);font-style:normal}
 .nav-links{list-style:none;display:flex;gap:1.4rem}
@@ -32,114 +13,55 @@ nav{
 .ext{font-family:'League Spartan',sans-serif;font-weight:900;font-size:.68rem;text-decoration:none;text-transform:uppercase;letter-spacing:1px;padding:.35rem .75rem;border:2px solid;transition:all .15s}
 .ext.li{color:var(--y);border-color:var(--y)}.ext.li:hover{background:var(--y);color:var(--bk)}
 .ext.cu{color:var(--f);border-color:var(--f)}.ext.cu:hover{background:var(--f);color:var(--bk)}
-
-/* ===== HERO ===== */
-.hero{
-  background:var(--bk);padding:5rem 2rem 4.5rem;
-  position:relative;overflow:hidden;
-  clip-path:polygon(0 0,100% 0,100% 93%,98.5% 100%,1.5% 100%,0 93%);
-}
+.hero{background:var(--bk);padding:5rem 2rem 4.5rem;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 93%,98.5% 100%,1.5% 100%,0 93%)}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2}
-.sticker{
-  display:inline-block;background:var(--y);color:var(--bk);
-  font-family:'League Spartan',sans-serif;font-weight:900;font-size:.68rem;
-  text-transform:uppercase;letter-spacing:2px;padding:.3rem .9rem;
-  transform:rotate(-1.5deg);margin-bottom:1.5rem;
-}
+.sticker{display:inline-block;background:var(--y);color:var(--bk);font-family:'League Spartan',sans-serif;font-weight:900;font-size:.68rem;text-transform:uppercase;letter-spacing:2px;padding:.3rem .9rem;transform:rotate(-1.5deg);margin-bottom:1.5rem}
 .hero h1{font-family:'Anton',sans-serif;font-size:clamp(3rem,7.5vw,6rem);color:#fff;text-transform:uppercase;line-height:.9;max-width:620px}
-.hero h1 .af{color:var(--f)}
-.hero h1 .ay{color:var(--y)}
+.hero h1 .af{color:var(--f)}.hero h1 .ay{color:var(--y)}
 .hero-desc{font-family:'Lucida Sans',sans-serif;color:#999;font-size:.92rem;max-width:460px;margin-top:1.2rem;line-height:1.65}
-/* Deco shapes */
 .d1{position:absolute;top:-50px;right:6%;width:240px;height:240px;background:var(--v);opacity:.2;transform:rotate(18deg);clip-path:polygon(4% 0,100% 6%,97% 96%,0 100%)}
 .d2{position:absolute;bottom:10px;right:22%;width:90px;height:90px;background:var(--g);opacity:.35;transform:rotate(-10deg)}
 .d3{position:absolute;top:25%;right:3%;width:35px;height:130px;background:var(--f);opacity:.25;transform:rotate(6deg)}
 .d4{position:absolute;bottom:30%;right:15%;width:60px;height:60px;background:var(--y);opacity:.15;transform:rotate(30deg)}
-
-/* ===== SECTION HEADERS ===== */
 .sh{display:flex;align-items:baseline;gap:1rem;margin-bottom:2rem}
 .sh h2{font-family:'Anton',sans-serif;font-size:2.2rem;text-transform:uppercase;line-height:1;white-space:nowrap}
 .sh-bar{flex:1;height:3px;background:currentColor}
-
-/* ===== HOME COLS ===== */
 .home-main{max-width:1100px;margin:0 auto;padding:3rem 2rem}
 .home-cols{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem}
-
-/* Featured card */
-.feat{background:var(--bk);color:#fff;padding:2rem;position:relative;clip-path:polygon(0 0,100% 0,100% 96%,97% 100%,0 100%);margin-bottom:1.5rem}
+.feat{background:var(--bk);color:#fff;padding:2rem;position:relative;clip-path:polygon(0 0,100% 0,100% 96%,97% 100%,0 100%);margin-bottom:1.5rem;display:block;text-decoration:none}
 .feat h2{font-family:'Anton',sans-serif;font-size:1.55rem;text-transform:uppercase;line-height:1.05;margin:.7rem 0 .7rem}
 .feat p{font-size:.83rem;color:#bbb;line-height:1.6}
 .read-more{display:inline-block;margin-top:1rem;font-family:'League Spartan',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--y);text-decoration:none;border-bottom:1px solid var(--y)}
-
-/* Small cards */
 .scards{display:flex;flex-direction:column;gap:.9rem}
-.sc{display:flex;gap:1rem;align-items:flex-start;padding:.9rem 1rem;background:rgba(0,0,0,.04)}
-.sc:nth-child(1){border-left:4px solid var(--v)}
-.sc:nth-child(2){border-left:4px solid var(--g)}
-.sc:nth-child(3){border-left:4px solid var(--f)}
+.sc{display:flex;gap:1rem;align-items:flex-start;padding:.9rem 1rem;background:rgba(0,0,0,.04);text-decoration:none;color:var(--bk)}
+.sc:nth-child(1){border-left:4px solid var(--v)}.sc:nth-child(2){border-left:4px solid var(--g)}.sc:nth-child(3){border-left:4px solid var(--f)}
 .sc h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.88rem;line-height:1.3;margin-bottom:.25rem}
 .sc .meta{font-size:.65rem;color:#888;font-family:'League Spartan',sans-serif;text-transform:uppercase;letter-spacing:1px}
-
-/* Tags */
 .tag{display:inline-block;font-family:'League Spartan',sans-serif;font-weight:900;font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;padding:.18rem .55rem;margin-bottom:.5rem}
 .tl{background:var(--g);color:#fff}.tf{background:var(--f);color:var(--bk)}.tv{background:var(--v);color:#fff}.ty{background:var(--y);color:var(--bk)}.ta{background:#c0392b;color:#fff}.tc{background:#1a6a9a;color:#fff}
-
-/* ===== INSTAGRAM SECTION ===== */
-.ig-sec{
-  background:var(--bk);padding:3rem 2rem;
-  clip-path:polygon(0 4%,2% 0,98% 0,100% 4%,100% 96%,98% 100%,2% 100%,0 96%);
-  margin:1rem 0;
-}
-.ig-inner{max-width:1100px;margin:0 auto}
 .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:1rem}
-.ig-item{
-  aspect-ratio:1;position:relative;overflow:hidden;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-}
-.ig-item .label{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:.5rem;text-align:center;font-family:'League Spartan',sans-serif;font-weight:700;
-  font-size:.65rem;color:#fff;text-transform:uppercase;letter-spacing:.5px;
-  background:rgba(0,0,0,.5);opacity:0;transition:opacity .2s;
-}
+.ig-item{aspect-ratio:1;position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ig-item .label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:.5rem;text-align:center;font-family:'League Spartan',sans-serif;font-weight:700;font-size:.65rem;color:#fff;text-transform:uppercase;letter-spacing:.5px;background:rgba(0,0,0,.5);opacity:0;transition:opacity .2s}
 .ig-item:hover .label{opacity:1}
 .ig-item .icon{font-size:1.4rem;opacity:.4;color:#fff;z-index:1}
-
-/* ===== ARTICULOS ===== */
 .art-sec{max-width:1100px;margin:0 auto;padding:3rem 2rem}
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.art-card{
-  border:2px solid var(--bk);padding:1.4rem;background:white;
-  position:relative;transition:transform .12s,box-shadow .12s;
-}
+.art-card{border:2px solid var(--bk);padding:1.4rem;background:white;position:relative;transition:transform .12s,box-shadow .12s;display:block;text-decoration:none;color:var(--bk)}
 .art-card:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--bk)}
-.art-card:nth-child(3n+1){border-top:5px solid var(--v)}
-.art-card:nth-child(3n+2){border-top:5px solid var(--g)}
-.art-card:nth-child(3n+3){border-top:5px solid var(--f)}
+.art-card:nth-child(3n+1){border-top:5px solid var(--v)}.art-card:nth-child(3n+2){border-top:5px solid var(--g)}.art-card:nth-child(3n+3){border-top:5px solid var(--f)}
 .art-card h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.93rem;line-height:1.3;margin:.5rem 0 .45rem}
 .art-card p{font-size:.8rem;color:#555;line-height:1.6}
 .art-date{font-family:'League Spartan',sans-serif;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#999;margin-top:.75rem}
-
-/* ===== SOBRE ===== */
-.sobre{
-  background:var(--v);padding:4.5rem 2rem;
-  clip-path:polygon(0 0,100% 3%,100% 100%,0 97%);
-}
+.sobre{background:var(--v);padding:4.5rem 2rem;clip-path:polygon(0 0,100% 3%,100% 100%,0 97%)}
 .sobre-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:3rem;align-items:center}
 .sobre-left .big{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5.5vw,4.5rem);color:var(--y);text-transform:uppercase;line-height:.88;transform:rotate(-2deg);display:inline-block}
 .sobre-left .sub{font-family:'League Spartan',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;margin-top:.8rem}
-/* Tape decoration */
 .sobre-left .tape{display:block;width:55px;height:16px;background:rgba(250,255,0,.45);transform:rotate(-4deg);margin:-.4rem 0 .4rem -5px}
 .sobre-right p{color:#fff;font-size:.92rem;line-height:1.7;margin-bottom:.9rem}
 .sobre-right strong{color:var(--y)}
-
-/* ===== RECURSOS ===== */
 .rec-sec{max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem}
 .rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:2rem}
-.rbtn{
-  display:block;padding:1.8rem 2rem;text-decoration:none;border:3px solid var(--bk);
-  background:white;position:relative;transition:transform .15s,box-shadow .15s;
-}
+.rbtn{display:block;padding:1.8rem 2rem;text-decoration:none;border:3px solid var(--bk);background:white;position:relative;transition:transform .15s,box-shadow .15s}
 .rbtn:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--bk)}
 .rbtn:nth-child(1){border-color:var(--v);background:var(--v);transform:rotate(-.6deg)}
 .rbtn:nth-child(2){border-color:var(--g);background:var(--g);transform:rotate(.4deg)}
@@ -151,33 +73,18 @@ nav{
 .rbtn .rd{font-family:'League Spartan',sans-serif;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
 .rbtn:nth-child(1) .rd,.rbtn:nth-child(2) .rd{color:rgba(255,255,255,.65)}
 .rbtn .ra{position:absolute;top:1.4rem;right:1.4rem;font-size:1.4rem}
-.rbtn:nth-child(1) .ra{color:var(--y)}
-.rbtn:nth-child(2) .ra{color:var(--y)}
-.rbtn:nth-child(3) .ra{color:var(--v)}
-.rbtn:nth-child(4) .ra{color:var(--f)}
-
-/* ===== FOOTER ===== */
+.rbtn:nth-child(1) .ra{color:var(--y)}.rbtn:nth-child(2) .ra{color:var(--y)}.rbtn:nth-child(3) .ra{color:var(--v)}.rbtn:nth-child(4) .ra{color:var(--f)}
 footer{background:var(--bk);color:#fff;padding:2.5rem 2rem;text-align:center;border-top:4px solid var(--v)}
 .f-logo{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:2px}
 .f-logo em{color:var(--f);font-style:normal}
 footer p{font-size:.7rem;color:#555;margin-top:.4rem;font-family:'League Spartan',sans-serif;letter-spacing:1px;text-transform:uppercase}
-footer .f-links{display:flex;gap:1.5rem;justify-content:center;margin-top:1rem}
-footer .f-links a{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.7rem;color:#aaa;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:color .15s}
+footer .f-links{display:flex;gap:1.5rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+footer .f-links a{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.7rem;color:#aaa;text-decoration:none;text-transform:uppercase;letter-spacing:1px}
 footer .f-links a:hover{color:var(--y)}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .home-cols,.sobre-inner{grid-template-columns:1fr}
-  .ig-grid{grid-template-columns:repeat(2,1fr)}
-  .art-grid{grid-template-columns:1fr 1fr}
-  .rec-grid{grid-template-columns:1fr}
-  .nav-ext{display:none}
-  .nav-links{gap:.9rem}
-}
+@media(max-width:768px){.home-cols,.sobre-inner{grid-template-columns:1fr}.ig-grid{grid-template-columns:repeat(2,1fr)}.art-grid{grid-template-columns:1fr 1fr}.rec-grid{grid-template-columns:1fr}.nav-ext{display:none}.nav-links{gap:.9rem}}
 @media(max-width:480px){.art-grid{grid-template-columns:1fr}}
 </style>
 
-<!-- NAV -->
 <nav>
   <div class="logo">Chicas en <em>RRII</em></div>
   <ul class="nav-links">
@@ -192,7 +99,6 @@ footer .f-links a:hover{color:var(--y)}
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="d1"></div><div class="d2"></div><div class="d3"></div><div class="d4"></div>
   <div class="hero-inner">
@@ -202,113 +108,51 @@ footer .f-links a:hover{color:var(--y)}
   </div>
 </section>
 
-<!-- HOME MAIN -->
 <section class="home-main">
   <div class="home-cols">
-    <!-- Left: latest -->
     <div>
-      <div class="sh" style="color:var(--v)">
-        <h2>Lo último</h2><div class="sh-bar"></div>
-      </div>
-      <div class="feat">
+      <div class="sh" style="color:var(--v)"><h2>Lo último</h2><div class="sh-bar"></div></div>
+      <a href="#" class="feat">
         <span class="tag tl">LATAM</span>
         <h2>Geopolítica del Mundial 2026: visas, exclusiones y poder</h2>
         <p>Irán jugando en Tijuana, Rusia vs. FIFA, visas denegadas el día de la inauguración. El Mundial como espejo del orden internacional contemporáneo.</p>
-        <a href="articulo-neutralidad-sur.html" class="read-more">Leer análisis →</a>
-      </div>
+        <span class="read-more">Leer análisis →</span>
+      </a>
       <div class="scards">
-        <div class="sc">
-          <div>
-            <span class="tag tf">Género</span>
-            <h3>Lo personal es internacional: genealogía del feminismo en RRII</h3>
-            <div class="meta">04 jun 2026</div>
-          </div>
-        </div>
-        <div class="sc">
-          <div>
-            <span class="tag tv">Medio Oriente</span>
-            <h3>Argentina, Washington y Tel Aviv: una alineación sin precedentes</h3>
-            <div class="meta">18 may 2026</div>
-          </div>
-        </div>
-        <div class="sc">
-          <div>
-            <span class="tag ty">Teoría</span>
-            <h3>Soft, smart, sharp power: cómo leer el poder desde el Río de la Plata</h3>
-            <div class="meta">02 may 2026</div>
-          </div>
-        </div>
+        <a href="#" class="sc"><div><span class="tag tf">Género</span><h3>Lo personal es internacional: genealogía del feminismo en RRII</h3><div class="meta">04 jun 2026</div></div></a>
+        <a href="#" class="sc"><div><span class="tag tv">Medio Oriente</span><h3>Argentina, Washington y Tel Aviv: una alineación sin precedentes</h3><div class="meta">18 may 2026</div></div></a>
+        <a href="articulo-soft-smart-sharp-power.html" class="sc"><div><span class="tag ty">Teoría</span><h3>Soft, smart, sharp power: cómo leer el poder desde el Río de la Plata</h3><div class="meta">02 may 2026</div></div></a>
       </div>
     </div>
-    <!-- Right: IG feed -->
     <div>
-      <div class="sh" style="color:var(--f)">
-        <h2>Instagram</h2><div class="sh-bar"></div>
+      <div class="sh" style="color:var(--f)"><h2>Instagram</h2><div class="sh-bar"></div></div>
+      <div class="ig-grid">
+        <div class="ig-item" style="background:var(--v)"><span class="icon">📍</span><div class="label">Geopolítica del Mundial</div></div>
+        <div class="ig-item" style="background:#111;border:2px solid var(--y)"><span class="icon">🌎</span><div class="label">Hondurasgate</div></div>
+        <div class="ig-item" style="background:var(--g)"><span class="icon">✊</span><div class="label">Irán-EEUU</div></div>
+        <div class="ig-item" style="background:#1a1a1a;border:2px solid var(--f)"><span class="icon">🗺️</span><div class="label">Malvinas 2026</div></div>
+        <div class="ig-item" style="background:var(--f);opacity:.85"><span class="icon">👁️</span><div class="label">Soft Power</div></div>
+        <div class="ig-item" style="background:#111;border:2px solid var(--v)"><span class="icon">📢</span><div class="label">Neutralidad en RRII</div></div>
+        <div class="ig-item" style="background:var(--v);opacity:.6"><span class="icon">⚖️</span><div class="label">Tercera Posición</div></div>
+        <div class="ig-item" style="background:var(--g);opacity:.7"><span class="icon">🌱</span><div class="label">Minerales críticos</div></div>
       </div>
-      <div class="ig-sec" style="clip-path:none;margin:0;padding:0;background:transparent">
-        <div class="ig-grid">
-          <div class="ig-item" style="background:var(--v)"><span class="icon">📍</span><div class="label">Geopolítica del Mundial</div></div>
-          <div class="ig-item" style="background:#111;border:2px solid var(--y)"><span class="icon">🌎</span><div class="label">Hondurasgate</div></div>
-          <div class="ig-item" style="background:var(--g)"><span class="icon">✊</span><div class="label">Irán-EEUU</div></div>
-          <div class="ig-item" style="background:#1a1a1a;border:2px solid var(--f)"><span class="icon">🗺️</span><div class="label">Malvinas 2026</div></div>
-          <div class="ig-item" style="background:var(--f);opacity:.85"><span class="icon">👁️</span><div class="label">Soft Power</div></div>
-          <div class="ig-item" style="background:#111;border:2px solid var(--v)"><span class="icon">📢</span><div class="label">Neutralidad en RRII</div></div>
-          <div class="ig-item" style="background:var(--v);opacity:.6"><span class="icon">⚖️</span><div class="label">Tercera Posición</div></div>
-          <div class="ig-item" style="background:var(--g);opacity:.7"><span class="icon">🌱</span><div class="label">Minerales críticos</div></div>
-        </div>
-        <a href="https://instagram.com/chicasenrrii" target="_blank" style="font-family:'League Spartan',sans-serif;font-weight:700;font-size:.78rem;color:var(--f);text-decoration:none;text-transform:uppercase;letter-spacing:1px">@chicasenrrii →</a>
-        <p style="font-size:.65rem;color:#aaa;margin-top:.4rem;font-family:'League Spartan',sans-serif">* Integración directa del feed requiere configuración con Instagram API.</p>
-      </div>
+      <a href="https://instagram.com/chicasenrrii" target="_blank" style="font-family:'League Spartan',sans-serif;font-weight:700;font-size:.78rem;color:var(--f);text-decoration:none;text-transform:uppercase;letter-spacing:1px">@chicasenrrii →</a>
     </div>
   </div>
 </section>
 
-<!-- ARTÍCULOS -->
 <section class="art-sec" id="articulos">
-  <div class="sh" style="color:var(--bk)">
-    <h2>Artículos</h2><div class="sh-bar"></div>
-  </div>
+  <div class="sh" style="color:var(--bk)"><h2>Artículos</h2><div class="sh-bar"></div></div>
   <div class="art-grid">
-    <div class="art-card">
-      <span class="tag ty">Teoría</span>
-      <h3>La neutralidad como postura política: una crítica desde el Sur</h3>
-      <p>La neutralidad no es una virtud universal; es una construcción de la diplomacia occidental que invisibiliza las asimetrías de poder.</p>
-      <div class="art-date">28 may 2026</div>
-    </div>
-    <div class="art-card">
-      <span class="tag tc">Colombia</span>
-      <h3>De la Espriella y el ciclo político colombiano de cara a 2026</h3>
-      <p>Análisis de la candidatura, el electorado y las tensiones dentro del campo progresista en Colombia.</p>
-      <div class="art-date">20 may 2026</div>
-    </div>
-    <div class="art-card">
-      <span class="tag tv">Medio Oriente</span>
-      <h3>Operación Furia Épica: narrativa de guerra y Estrecho de Ormuz</h3>
-      <p>Desde el inicio del conflicto hasta la reconfiguración regional: cómo se construye la narrativa bélica en tiempo real.</p>
-      <div class="art-date">15 abr 2026</div>
-    </div>
-    <div class="art-card">
-      <span class="tag tf">Género</span>
-      <h3>Minerales críticos y cuerpos: ecofeminismo en la era de la transición energética</h3>
-      <p>El coltán, el litio y las tierras raras no son solo materias primas: son territorios y cuerpos feminizados en disputa.</p>
-      <div class="art-date">10 abr 2026</div>
-    </div>
-    <div class="art-card">
-      <span class="tag ta">África</span>
-      <h3>Congo, minerales y conflicto: la guerra que el Norte Global no ve</h3>
-      <p>La crisis en el este del Congo es inseparable de la demanda de minerales para las industrias tecnológicas del Norte.</p>
-      <div class="art-date">01 abr 2026</div>
-    </div>
-    <div class="art-card">
-      <span class="tag tl">Malvinas</span>
-      <h3>Tercera Posición, Realismo Periférico y Milei: una genealogía</h3>
-      <p>Las Malvinas como litmus test de autonomía real: del peronismo a Escudé, de Menem a la política exterior actual.</p>
-      <div class="art-date">24 mar 2026</div>
-    </div>
+    <a href="articulo-neutralidad-sur.html" class="art-card"><span class="tag ty">Teoría</span><h3>La neutralidad como postura política: una crítica desde el Sur</h3><p>La neutralidad no es una virtud universal; es una construcción de la diplomacia occidental que invisibiliza las asimetrías de poder.</p><div class="art-date">28 may 2026</div></a>
+    <a href="articulo-colombia-2026.html" class="art-card"><span class="tag tc">Colombia</span><h3>De la Espriella y el ciclo político colombiano de cara a 2026</h3><p>Análisis de la candidatura, el electorado y las tensiones dentro del campo progresista en Colombia.</p><div class="art-date">20 may 2026</div></a>
+    <a href="articulo-ormuz-furia-epica.html" class="art-card"><span class="tag tv">Medio Oriente</span><h3>Operación Furia Épica: narrativa de guerra y Estrecho de Ormuz</h3><p>Desde el inicio del conflicto hasta la reconfiguración regional: cómo se construye la narrativa bélica en tiempo real.</p><div class="art-date">15 abr 2026</div></a>
+    <a href="articulo-minerales-ecofeminismo.html" class="art-card"><span class="tag tf">Género</span><h3>Minerales críticos y cuerpos: ecofeminismo en la era de la transición energética</h3><p>El coltán, el litio y las tierras raras no son solo materias primas: son territorios y cuerpos feminizados en disputa.</p><div class="art-date">10 abr 2026</div></a>
+    <a href="articulo-congo-minerales.html" class="art-card"><span class="tag ta">África</span><h3>Congo, minerales y conflicto: la guerra que el Norte Global no ve</h3><p>La crisis en el este del Congo es inseparable de la demanda de minerales para las industrias tecnológicas del Norte.</p><div class="art-date">01 abr 2026</div></a>
+    <a href="articulo-malvinas-tercera-posicion.html" class="art-card"><span class="tag tl">Malvinas</span><h3>Tercera Posición, Realismo Periférico y Milei: una genealogía</h3><p>Las Malvinas como litmus test de autonomía real: del peronismo a Escudé, de Menem a la política exterior actual.</p><div class="art-date">24 mar 2026</div></a>
   </div>
 </section>
 
-<!-- SOBRE -->
 <section class="sobre" id="sobre">
   <div class="sobre-inner">
     <div class="sobre-left">
@@ -324,36 +168,16 @@ footer .f-links a:hover{color:var(--y)}
   </div>
 </section>
 
-<!-- RECURSOS -->
 <section class="rec-sec" id="recursos">
-  <div class="sh" style="color:var(--bk)">
-    <h2>Recursos</h2><div class="sh-bar"></div>
-  </div>
+  <div class="sh" style="color:var(--bk)"><h2>Recursos</h2><div class="sh-bar"></div></div>
   <div class="rec-grid">
-    <a href="#" class="rbtn" target="_blank">
-      <span class="ra">↗</span>
-      <div class="rt">LinkedIn</div>
-      <div class="rd">Perfil profesional</div>
-    </a>
-    <a href="#" class="rbtn" target="_blank">
-      <span class="ra">↗</span>
-      <div class="rt">Cursos</div>
-      <div class="rd">Leer el mundo en clave feminista</div>
-    </a>
-    <a href="#" class="rbtn" target="_blank">
-      <span class="ra">↗</span>
-      <div class="rt">Biblioteca Virtual</div>
-      <div class="rd">Textos, papers y lecturas recomendadas en Drive</div>
-    </a>
-    <a href="#" class="rbtn" target="_blank">
-      <span class="ra">↗</span>
-      <div class="rt">Recursos Descargables</div>
-      <div class="rd">Guías, infografías y materiales digitales</div>
-    </a>
+    <a href="#" class="rbtn" target="_blank"><span class="ra">↗</span><div class="rt">LinkedIn</div><div class="rd">Perfil profesional</div></a>
+    <a href="#" class="rbtn" target="_blank"><span class="ra">↗</span><div class="rt">Cursos</div><div class="rd">Leer el mundo en clave feminista</div></a>
+    <a href="#" class="rbtn" target="_blank"><span class="ra">↗</span><div class="rt">Biblioteca Virtual</div><div class="rd">Textos, papers y lecturas recomendadas en Drive</div></a>
+    <a href="recursos-descargables.html" class="rbtn"><span class="ra">↗</span><div class="rt">Recursos Descargables</div><div class="rd">Guías, infografías y materiales digitales</div></a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="f-logo">Chicas en <em>RRII</em></div>
   <p>Tucumán · Argentina · @chicasenrrii</p>
@@ -362,7 +186,7 @@ footer .f-links a:hover{color:var(--y)}
     <a href="#articulos">Artículos</a>
     <a href="#sobre">Sobre</a>
     <a href="#recursos">Recursos</a>
-    <a href="#" target="_blank">Instagram</a>
+    <a href="https://instagram.com/chicasenrrii" target="_blank">Instagram</a>
     <a href="#" target="_blank">LinkedIn</a>
   </div>
 </footer>
