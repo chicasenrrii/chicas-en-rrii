@@ -1,0 +1,116 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@400;600;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--v:#673AB7;--g:#2E8B57;--y:#FAFF00;--f:#FF18E8;--bk:#0d0d0d;--paper:#f0e8d6}
+body{font-family:'Lucida Sans','Lucida Grande',sans-serif;background-color:var(--paper);color:var(--bk);overflow-x:hidden;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+nav{background:var(--bk);padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:4px solid var(--f)}
+.logo{font-family:'Anton',sans-serif;font-size:1.3rem;color:#fff;text-transform:uppercase;letter-spacing:2px;text-decoration:none}
+.logo em{color:var(--f);font-style:normal}
+.back{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.78rem;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px}
+.back:hover{color:var(--y)}
+
+.art-hero{background:var(--bk);padding:3.5rem 2rem 3rem;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 95%,98.5% 100%,1.5% 100%,0 95%)}
+.art-hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:2}
+.tag{display:inline-block;font-family:'League Spartan',sans-serif;font-weight:900;font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;padding:.25rem .8rem;margin-bottom:1.2rem;background:var(--y);color:var(--bk);transform:rotate(-1.5deg)}
+.art-hero h1{font-family:'Anton',sans-serif;font-size:clamp(2.2rem,5.5vw,3.4rem);color:#fff;text-transform:uppercase;line-height:1.05}
+.art-meta{display:flex;gap:1.2rem;margin-top:1.3rem;flex-wrap:wrap}
+.art-meta span{font-family:'League Spartan',sans-serif;font-size:.72rem;color:#999;text-transform:uppercase;letter-spacing:1px}
+.art-meta strong{color:var(--f)}
+.dh1{position:absolute;top:-40px;right:5%;width:180px;height:180px;background:var(--v);opacity:.18;transform:rotate(15deg);clip-path:polygon(4% 0,100% 6%,97% 96%,0 100%)}
+.dh2{position:absolute;bottom:-20px;right:25%;width:70px;height:70px;background:var(--g);opacity:.3;transform:rotate(-10deg)}
+
+.art-body{max-width:680px;margin:0 auto;padding:3rem 2rem 2rem}
+.art-body .lead{font-family:'League Spartan',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.55;margin-bottom:1.8rem;color:var(--v)}
+.art-body p{font-size:.98rem;line-height:1.85;margin-bottom:1.4rem;color:#222}
+.art-body h2{font-family:'Anton',sans-serif;font-size:1.5rem;text-transform:uppercase;margin:2.2rem 0 1rem;color:var(--bk);position:relative;display:inline-block}
+.art-body h2::after{content:'';position:absolute;bottom:-4px;left:0;width:60%;height:4px;background:var(--f)}
+.art-body blockquote{border-left:4px solid var(--v);padding:.3rem 0 .3rem 1.3rem;margin:1.8rem 0;font-family:'League Spartan',sans-serif;font-weight:600;font-style:normal;font-size:1.02rem;color:var(--v)}
+.art-body strong{background:linear-gradient(180deg,transparent 60%,var(--y) 60%)}
+.pull{background:var(--bk);color:#fff;padding:1.8rem;margin:2.2rem 0;clip-path:polygon(0 0,100% 0,100% 94%,96% 100%,0 100%);transform:rotate(-.4deg)}
+.pull p{color:#ddd;font-size:.95rem;margin:0;line-height:1.7}
+.pull .pull-label{font-family:'League Spartan',sans-serif;font-weight:900;font-size:.65rem;color:var(--y);text-transform:uppercase;letter-spacing:1.5px;display:block;margin-bottom:.5rem}
+
+.share-row{display:flex;gap:.7rem;margin:2.5rem 0 0;flex-wrap:wrap}
+.share-row a{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:1px;padding:.5rem 1rem;border:2px solid var(--bk);text-decoration:none;color:var(--bk);transition:all .15s}
+.share-row a:hover{background:var(--bk);color:#fff}
+
+.related{max-width:1100px;margin:3rem auto 0;padding:0 2rem 3rem}
+.related h3{font-family:'Anton',sans-serif;font-size:1.6rem;text-transform:uppercase;margin-bottom:1.3rem}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.rel-card{border:2px solid var(--bk);padding:1.2rem;background:white;text-decoration:none;color:var(--bk);display:block;transition:transform .12s,box-shadow .12s}
+.rel-card:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--bk)}
+.rel-card:nth-child(1){border-top:5px solid var(--v)}.rel-card:nth-child(2){border-top:5px solid var(--g)}.rel-card:nth-child(3){border-top:5px solid var(--f)}
+.rel-card h4{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.86rem;line-height:1.3}
+
+footer{background:var(--bk);color:#fff;padding:2.5rem 2rem;text-align:center;border-top:4px solid var(--v);margin-top:2rem}
+.f-logo{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:2px}
+.f-logo em{color:var(--f);font-style:normal}
+footer p{font-size:.7rem;color:#555;margin-top:.4rem;font-family:'League Spartan',sans-serif;letter-spacing:1px;text-transform:uppercase}
+
+@media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+</style>
+
+<nav>
+  <a href="index.html" class="logo">Chicas en <em>RRII</em></a>
+  <a href="index.html#articulos" class="back">← Volver a artículos</a>
+</nav>
+
+<section class="art-hero">
+  <div class="dh1"></div><div class="dh2"></div>
+  <div class="art-hero-inner">
+    <span class="tag">Teoría</span>
+    <h1>La neutralidad como postura política: una crítica desde el Sur</h1>
+    <div class="art-meta">
+      <span>28 may 2026</span>
+      <span>·</span>
+      <span><strong>6 min</strong> de lectura</span>
+      <span>·</span>
+      <span>Por Chicas en RRII</span>
+    </div>
+  </div>
+</section>
+
+<article class="art-body">
+  <p class="lead">La neutralidad no es una virtud universal. Es una construcción histórica de la diplomacia occidental, y como toda construcción, tiene autores, intereses y consecuencias desiguales según quién la invoque.</p>
+
+  <p>Cuando un Estado del Norte Global se declara "neutral" frente a un conflicto, rara vez paga el mismo costo que un Estado del Sur que toma la misma postura. La neutralidad de Suiza no es la neutralidad de Bolivia, y esa diferencia no es casual: tiene que ver con quién diseñó las reglas del sistema internacional y bajo qué supuestos.</p>
+
+  <h2>Una herramienta con historia</h2>
+  <p>El concepto moderno de neutralidad se consolida en el Congreso de Viena (1815) y se institucionaliza con las Convenciones de La Haya de 1907. Pero ya en su origen, la neutralidad funcionaba como privilegio de las potencias europeas que podían darse el lujo de no tomar partido sin sufrir las consecuencias que sí enfrentaban los países periféricos.</p>
+
+  <blockquote>"La neutralidad de los poderosos es maniobra política. La de los débiles, casi siempre, sumisión disfrazada."</blockquote>
+
+  <p>Esta asimetría se repite en el siglo XXI. Pensemos en América Latina votando en la ONU sobre conflictos en Medio Oriente: cuando un país pequeño se abstiene, suele leerse como falta de compromiso. Cuando lo hace una potencia, se interpreta como cálculo estratégico legítimo.</p>
+
+  <h2>El caso latinoamericano</h2>
+  <p>La Tercera Posición peronista de los años 40 ya proponía algo distinto a la neutralidad pasiva: una autonomía activa, que no se subordinara ni a Washington ni a Moscú, pero que tampoco se escondiera detrás de la inacción. Carlos Escudé retomaría después esta tensión con el Realismo Periférico, cuestionando los costos reales de la autonomía para países con poder relativo limitado.</p>
+
+  <div class="pull">
+    <span class="pull-label">Para pensar</span>
+    <p>¿Es la misma "neutralidad" la de un país que negocia desde una posición de fuerza económica, que la de uno que depende de organismos multilaterales para financiar su déficit?</p>
+  </div>
+
+  <h2>Entonces, ¿qué hacemos con la neutralidad?</h2>
+  <p>No se trata de descartarla como concepto, sino de leerla con sospecha. Preguntar siempre: ¿neutral respecto a qué? ¿Neutral para quién? ¿Quién se beneficia de que este país no tome posición? La neutralidad, lejos de ser un gesto vacío, es en sí misma una decisión política — y como toda decisión política, merece ser analizada en sus efectos concretos, no en su retórica de imparcialidad.</p>
+
+  <div class="share-row">
+    <a href="#">Compartir en X</a>
+    <a href="#">Compartir en WhatsApp</a>
+    <a href="https://instagram.com/chicasenrrii" target="_blank">Ver en Instagram</a>
+  </div>
+</article>
+
+<section class="related">
+  <h3>Seguí leyendo</h3>
+  <div class="related-grid">
+    <a href="#" class="rel-card"><h4>De la Espriella y el ciclo político colombiano de cara a 2026</h4></a>
+    <a href="#" class="rel-card"><h4>Operación Furia Épica: narrativa de guerra y Estrecho de Ormuz</h4></a>
+    <a href="#" class="rel-card"><h4>Tercera Posición, Realismo Periférico y Milei: una genealogía</h4></a>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Chicas en <em>RRII</em></div>
+  <p>Tucumán · Argentina · @chicasenrrii</p>
+</footer>
