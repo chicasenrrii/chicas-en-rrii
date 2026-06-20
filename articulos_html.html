@@ -1,0 +1,185 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@400;600;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--v:#673AB7;--g:#2E8B57;--y:#FAFF00;--f:#FF18E8;--bk:#0d0d0d;--paper:#f0e8d6}
+body{font-family:'Lucida Sans','Lucida Grande',sans-serif;background-color:var(--paper);color:var(--bk);overflow-x:hidden;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+nav{background:var(--bk);padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:4px solid var(--f)}
+.logo{font-family:'Anton',sans-serif;font-size:1.3rem;color:#fff;text-transform:uppercase;letter-spacing:2px;text-decoration:none}
+.logo em{color:var(--f);font-style:normal}
+.back{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.78rem;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px}
+.back:hover{color:var(--y)}
+
+.ah{background:var(--bk);padding:3.5rem 2rem 3rem;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,100% 95%,98.5% 100%,1.5% 100%,0 95%)}
+.ah-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+.ah .sticker{display:inline-block;background:var(--y);color:var(--bk);font-family:'League Spartan',sans-serif;font-weight:900;font-size:.68rem;text-transform:uppercase;letter-spacing:2px;padding:.3rem .9rem;transform:rotate(-1.5deg);margin-bottom:1.3rem}
+.ah h1{font-family:'Anton',sans-serif;font-size:clamp(2.4rem,6vw,3.8rem);color:#fff;text-transform:uppercase;line-height:1}
+.ah p{font-family:'Lucida Sans',sans-serif;color:#999;font-size:.92rem;max-width:520px;margin-top:1rem;line-height:1.65}
+.adh1{position:absolute;top:-40px;right:5%;width:180px;height:180px;background:var(--v);opacity:.18;transform:rotate(15deg);clip-path:polygon(4% 0,100% 6%,97% 96%,0 100%)}
+.adh2{position:absolute;bottom:-20px;right:25%;width:70px;height:70px;background:var(--g);opacity:.3;transform:rotate(-10deg)}
+
+.awrap{max-width:1180px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:2.5rem;align-items:start}
+
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.fbtn{font-family:'League Spartan',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;padding:.5rem 1rem;border:2px solid var(--bk);background:#fff;color:var(--bk);cursor:pointer;transition:all .15s}
+.fbtn:hover{background:var(--bk);color:#fff}
+.fbtn.active{background:var(--bk);color:#fff}
+
+.alist{display:flex;flex-direction:column;gap:1.1rem}
+.acard{display:block;text-decoration:none;color:var(--bk);background:#fff;border:2px solid var(--bk);padding:1.4rem 1.6rem;transition:transform .12s,box-shadow .12s}
+.acard:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--bk)}
+.acard.hidden{display:none}
+.tag{display:inline-block;font-family:'League Spartan',sans-serif;font-weight:900;font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;padding:.18rem .55rem;margin-bottom:.6rem}
+.tl{background:var(--g);color:#fff}.tf{background:var(--f);color:var(--bk)}.tv{background:var(--v);color:#fff}.ty{background:var(--y);color:var(--bk)}.ta{background:#c0392b;color:#fff}.tc{background:#1a6a9a;color:#fff}
+.acard h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:1.02rem;line-height:1.35;margin-bottom:.5rem}
+.acard p{font-size:.85rem;color:#555;line-height:1.65;margin-bottom:.7rem}
+.acard .ameta{font-family:'League Spartan',sans-serif;font-size:.65rem;color:#999;text-transform:uppercase;letter-spacing:1px}
+
+.sidebar{display:flex;flex-direction:column;gap:1.3rem;position:sticky;top:90px}
+.sbox{background:var(--bk);color:#fff;padding:1.6rem;position:relative;clip-path:polygon(0 0,100% 0,100% 95%,95% 100%,0 100%)}
+.sbox.cta{background:var(--v)}
+.sbox.donate{background:#fff;color:var(--bk);border:3px solid var(--bk)}
+.sbox h4{font-family:'Anton',sans-serif;font-size:1.15rem;text-transform:uppercase;line-height:1.15;margin-bottom:.6rem}
+.sbox p{font-size:.82rem;line-height:1.6;margin-bottom:1rem}
+.sbox.cta p,.sbox.cta h4{color:#fff}
+.sbtn{display:inline-block;width:100%;text-align:center;font-family:'League Spartan',sans-serif;font-weight:900;font-size:.72rem;text-transform:uppercase;letter-spacing:1px;padding:.65rem 1rem;text-decoration:none}
+.sbox.cta .sbtn{background:var(--y);color:var(--bk)}
+.sbox.cta .sbtn:hover{background:#fff}
+.donate-buttons{display:flex;flex-direction:column;gap:.6rem}
+.dbtn{display:flex;align-items:center;justify-content:center;gap:.5rem;font-family:'League Spartan',sans-serif;font-weight:900;font-size:.74rem;text-transform:uppercase;letter-spacing:1px;padding:.7rem 1rem;text-decoration:none;border:2px solid var(--bk);transition:all .15s}
+.dbtn.cafecito{background:#6f4ef2;color:#fff;border-color:#6f4ef2}
+.dbtn.cafecito:hover{background:var(--bk);border-color:var(--bk)}
+.dbtn.kofi{background:#ff5e5b;color:#fff;border-color:#ff5e5b}
+.dbtn.kofi:hover{background:var(--bk);border-color:var(--bk)}
+
+footer{background:var(--bk);color:#fff;padding:2.5rem 2rem;text-align:center;border-top:4px solid var(--v);margin-top:1rem}
+.f-logo{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:2px}
+.f-logo em{color:var(--f);font-style:normal}
+footer p{font-size:.7rem;color:#555;margin-top:.4rem;font-family:'League Spartan',sans-serif;letter-spacing:1px;text-transform:uppercase}
+
+@media(max-width:900px){.awrap{grid-template-columns:1fr}.sidebar{position:static;flex-direction:row;flex-wrap:wrap}.sbox{flex:1;min-width:240px}}
+</style>
+
+<nav>
+  <a href="index.html" class="logo">Chicas en <em>RRII</em></a>
+  <a href="index.html#articulos" class="back">← Volver al inicio</a>
+</nav>
+
+<section class="ah">
+  <div class="adh1"></div><div class="adh2"></div>
+  <div class="ah-inner">
+    <span class="sticker">✦ Archivo completo</span>
+    <h1>Artículos</h1>
+    <p>Todo el análisis de Chicas en RRII en un solo lugar. Filtrá por región o tema, o simplemente buscá algo para leer.</p>
+  </div>
+</section>
+
+<div class="awrap">
+  <div>
+    <div class="filters">
+      <button class="fbtn active" data-filter="todos">Todos</button>
+      <button class="fbtn" data-filter="latam">LATAM</button>
+      <button class="fbtn" data-filter="medio-oriente">Medio Oriente</button>
+      <button class="fbtn" data-filter="teoria">Teoría</button>
+      <button class="fbtn" data-filter="genero">Género</button>
+      <button class="fbtn" data-filter="africa">África</button>
+      <button class="fbtn" data-filter="malvinas">Malvinas</button>
+    </div>
+
+    <div class="alist" id="alist">
+      <a href="articulo-neutralidad-sur.html" class="acard" data-cat="teoria">
+        <span class="tag ty">Teoría</span>
+        <h3>La neutralidad como postura política: una crítica desde el Sur</h3>
+        <p>La neutralidad no es una virtud universal; es una construcción de la diplomacia occidental que invisibiliza las asimetrías de poder.</p>
+        <span class="ameta">28 may 2026 · 6 min</span>
+      </a>
+      <a href="articulo-colombia-2026.html" class="acard" data-cat="latam">
+        <span class="tag tc">Colombia</span>
+        <h3>De la Espriella y el ciclo político colombiano de cara a 2026</h3>
+        <p>Análisis de la candidatura, el electorado y las tensiones dentro del campo progresista en Colombia.</p>
+        <span class="ameta">20 may 2026 · 7 min</span>
+      </a>
+      <a href="articulo-ormuz-furia-epica.html" class="acard" data-cat="medio-oriente">
+        <span class="tag tv">Medio Oriente</span>
+        <h3>Operación Furia Épica: narrativa de guerra y Estrecho de Ormuz</h3>
+        <p>Desde el inicio del conflicto hasta la reconfiguración regional: cómo se construye la narrativa bélica en tiempo real.</p>
+        <span class="ameta">15 abr 2026 · 8 min</span>
+      </a>
+      <a href="articulo-minerales-ecofeminismo.html" class="acard" data-cat="genero">
+        <span class="tag tf">Género</span>
+        <h3>Minerales críticos y cuerpos: ecofeminismo en la era de la transición energética</h3>
+        <p>El coltán, el litio y las tierras raras no son solo materias primas: son territorios y cuerpos feminizados en disputa.</p>
+        <span class="ameta">10 abr 2026 · 6 min</span>
+      </a>
+      <a href="articulo-congo-minerales.html" class="acard" data-cat="africa">
+        <span class="tag ta">África</span>
+        <h3>Congo, minerales y conflicto: la guerra que el Norte Global no ve</h3>
+        <p>La crisis en el este del Congo es inseparable de la demanda de minerales para las industrias tecnológicas del Norte.</p>
+        <span class="ameta">01 abr 2026 · 7 min</span>
+      </a>
+      <a href="articulo-malvinas-tercera-posicion.html" class="acard" data-cat="malvinas">
+        <span class="tag tl">Malvinas</span>
+        <h3>Tercera Posición, Realismo Periférico y Milei: una genealogía</h3>
+        <p>Las Malvinas como litmus test de autonomía real: del peronismo a Escudé, de Menem a la política exterior actual.</p>
+        <span class="ameta">24 mar 2026 · 9 min</span>
+      </a>
+      <a href="articulo-soft-smart-sharp-power.html" class="acard" data-cat="teoria">
+        <span class="tag ty">Teoría</span>
+        <h3>Soft, smart, sharp power: cómo leer el poder desde el Río de la Plata</h3>
+        <p>Las categorías clásicas de poder no alcanzan para explicar la región. Una propuesta de lectura situada.</p>
+        <span class="ameta">02 may 2026 · 5 min</span>
+      </a>
+      <a href="articulo-sudan-tercer-aniversario.html" class="acard" data-cat="africa">
+        <span class="tag ta">África</span>
+        <h3>Sudán: tercer aniversario de una guerra que el mundo deja de mirar</h3>
+        <p>Un balance del conflicto sudanés con enfoque decolonial, los actores regionales y la crisis humanitaria invisibilizada.</p>
+        <span class="ameta">15 abr 2026 · 8 min</span>
+      </a>
+      <a href="articulo-bolivia-conflicto-armado.html" class="acard" data-cat="latam">
+        <span class="tag tl">Bolivia</span>
+        <h3>Bolivia: del conflicto armado a la crisis institucional</h3>
+        <p>Cómo se llegó a este punto y qué actores regionales están observando de cerca el desenlace.</p>
+        <span class="ameta">10 mar 2026 · 7 min</span>
+      </a>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sbox cta">
+      <h4>¿Querés publicar tu artículo?</h4>
+      <p>Buscamos voces nuevas con mirada feminista y decolonial sobre relaciones internacionales. Mirá los criterios editoriales y mandanos tu propuesta.</p>
+      <a href="#" target="_blank" class="sbtn">Ver criterios editoriales →</a>
+    </div>
+
+    <div class="sbox donate">
+      <h4>Apoyá este proyecto</h4>
+      <p>Si este contenido te sirve, podés invitarnos un cafecito. Sostiene el tiempo de investigación detrás de cada análisis.</p>
+      <div class="donate-buttons">
+        <a href="#" target="_blank" class="dbtn cafecito">☕ Cafecito</a>
+        <a href="#" target="_blank" class="dbtn kofi">💛 Ko-fi</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="f-logo">Chicas en <em>RRII</em></div>
+  <p>Tucumán · Argentina · @chicasenrrii</p>
+</footer>
+
+<script>
+document.querySelectorAll('.fbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.acard').forEach(card => {
+      if (filter === 'todos' || card.dataset.cat === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
